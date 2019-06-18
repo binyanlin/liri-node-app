@@ -4,6 +4,7 @@ var keys = require('./keys.js');
 // var spotify = new Spotify(keys.spotify);
 const axios = require('axios');
 var moment = require('moment');
+var fs = require("fs");
 
 
 // node liri.js concert-this <artist/band name here>
@@ -42,15 +43,34 @@ const movie = async function() {
   } catch(e) {
     console.log(e);
   };
-}
-// do-what-it-says
-
-if (action === 'concert-this') {
-  concert();
-} if (action === 'spotify-this-song') {
-  
-} if (action === 'movie-this') {
-  movie();
-} if (action === 'do-what-it-says') {
-
 };
+// do-what-it-says
+const doSay = () => {
+  fs.readFile('./random.txt', 'utf-8', function(error, data) {
+    if (error) {
+      return console.log(error);
+    }
+    console.log(data);
+    let dataArray = data.split(',');
+    action = dataArray[0],
+    input = dataArray[1],
+
+    activity();
+  })
+}
+
+const activity = () => {
+  if (action === 'concert-this') {
+    concert();
+  } if (action === 'spotify-this-song') {
+    
+  } if (action === 'movie-this') {
+    movie();
+  } if (action === 'do-what-it-says') {
+    doSay();
+  } if (action === '') {
+    return;
+  }
+}
+
+activity();
