@@ -33,9 +33,20 @@ const concert = async function() {
 // spotify-this-song
 const song = async function () {
   try {
+    if (input === '') {
+      input = 'The Sign Ace of Base'
+    };
     const response = await spotify.search({ type: 'track', query: input });
-      console.log(response.tracks.items[0]);
-      console.log('Artist(s): '+ response.tracks.items[0].album.artists[0].name);
+      console.log(response.tracks.items[0].artists);
+
+      // artistNames = response.tracks.items[0].album.artists.map(function(value) {
+      //   return value.name
+      // });
+      let artist =[];
+      for (let index in response.tracks.items[0].artists) {
+        artist.push(response.tracks.items[0].artists[index].name )
+      };
+      console.log('Artist(s): '+ artist.join(', '));
       console.log('Song Name: '+ response.tracks.items[0].name);
       console.log('Preview URL: '+ response.tracks.items[0].preview_url);
       console.log('Album: '+ response.tracks.items[0].album.name);
