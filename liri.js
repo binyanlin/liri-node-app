@@ -1,11 +1,15 @@
 // spotify, bands in town, OMDB
 require('dotenv').config();
 var keys = require('./keys.js');
+var Spotify = require('node-spotify-api')
 // var spotify = new Spotify(keys.spotify);
 const axios = require('axios');
 var moment = require('moment');
 var fs = require("fs");
-
+var spotify = new Spotify({
+  id: keys.id,
+  secret: keys.secret
+});
 
 // node liri.js concert-this <artist/band name here>
 // This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
@@ -27,6 +31,18 @@ const concert = async function() {
   };
 };
 // spotify-this-song
+const song = async function () {
+  try {
+    const response = await spotify.search({ type: 'track', query: input });
+      console.log(response.tracks.items[0]);
+      console.log('Artist(s): '+ response.tracks.items[0].album.artists[0].name);
+      console.log('Song Name: '+ response.tracks.items[0].name);
+      console.log('Preview URL: '+ response.tracks.items[0].preview_url);
+      console.log('Album: '+ response.tracks.items[0].album.name);
+    } catch(e) {
+      console.log(e);
+    } 
+  };
 // movie-this
 const movie = async function() {
   try {
@@ -54,16 +70,17 @@ const doSay = () => {
     let dataArray = data.split(',');
     action = dataArray[0],
     input = dataArray[1],
-
     activity();
   })
-}
+};
+
+
 
 const activity = () => {
   if (action === 'concert-this') {
     concert();
   } if (action === 'spotify-this-song') {
-    
+    song();
   } if (action === 'movie-this') {
     movie();
   } if (action === 'do-what-it-says') {
