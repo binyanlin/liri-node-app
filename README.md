@@ -8,8 +8,11 @@ This application uses node packages and 3 different APIs to query songs, artists
 in the terminal, input "node liri.js <actionhere> <inputfield>"
 
 node liri.js concert-this lady gaga
+
 node liri.js spotify-this-song brave sara bareilles
+
 node liri.js movie-this V for Vendetta
+
 node liri.js do-what-it-says (takes no input)
 
 ### Additional Information
