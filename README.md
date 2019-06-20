@@ -14,6 +14,7 @@ node liri.js do-what-it-says (takes no input)
 
 ### Additional Information
 <actionhere> can take 4 queries:
+  
 concert-this: searches bands in town API for the Venue Name, Venue Location, and Time of Event
 
 spotify-this song: searches spotify for song name and gives information on the Artist, Song Name, Album Name, and gives a preview URL for the song.
