@@ -5,7 +5,7 @@
 This application uses node packages and 3 different APIs to query songs, artists, and movies from Spotify, IMDB, and Bands In Town. It uses NPM and node.js in conjunction with command line prompts to retrieve desired data as JSON from certain sites.
 
 ## Commands and sample use:
-in the terminal, input "node liri.js <actionhere> <inputfield>"
+in the terminal, input "node liri.js |actionhere| |inputfield|"
 
 node liri.js concert-this lady gaga
 
