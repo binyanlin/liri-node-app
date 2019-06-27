@@ -30,4 +30,5 @@ do-what-it-says: takes no input but reads a text file which contains a command t
 Javascript, Jquery, Node.js, AXIOS requests, .env, module.exports(), file system
 
 For example of queries, follow this link:
-https://imgur.com/a/6FD71rU
+
+![alt text](https://imgur.com/a/6FD71rU)
