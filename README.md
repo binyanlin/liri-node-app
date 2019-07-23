@@ -29,6 +29,6 @@ do-what-it-says: takes no input but reads a text file which contains a command t
 ### Technologies Used:
 Javascript, Jquery, Node.js, AXIOS requests, .env, module.exports(), file system
 
-For example of queries, follow this link:
+For example of queries, see below:
 
-https://imgur.com/a/6FD71rU
+!(https://imgur.com/a/6FD71rU)
