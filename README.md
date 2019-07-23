@@ -31,4 +31,4 @@ Javascript, Jquery, Node.js, AXIOS requests, .env, module.exports(), file system
 
 For example of queries, see below:
 
-![](https://imgur.com/a/6FD71rU)
+![](https://i.imgur.com/VfyMpIw.png)
